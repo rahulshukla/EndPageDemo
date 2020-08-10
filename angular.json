@@ -119,6 +119,46 @@
           }
         }
       }
+    },
+    "endpage-v2": {
+      "projectType": "library",
+      "root": "projects/endpage-v2",
+      "sourceRoot": "projects/endpage-v2/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/endpage-v2/tsconfig.lib.json",
+            "project": "projects/endpage-v2/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/endpage-v2/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/endpage-v2/src/test.ts",
+            "tsConfig": "projects/endpage-v2/tsconfig.spec.json",
+            "karmaConfig": "projects/endpage-v2/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/endpage-v2/tsconfig.lib.json",
+              "projects/endpage-v2/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "sunbird-endpage-v2"
 }

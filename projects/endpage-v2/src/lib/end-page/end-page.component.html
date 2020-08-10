@@ -1,0 +1,30 @@
+<div class="alignment">
+    <h3 *ngIf="endPageConfig['showMessage']">{{endPageConfig['message']}}</h3>
+    <h6 *ngIf="endPageConfig['showContentInfo']">{{endPageConfig['content-info']}}</h6>
+    <label *ngIf="endPageConfig['showAuthor']" class="authorLabel">Author: {{endPageConfig['author']}}</label>
+    <div class="score-container">
+        <div class="score">
+          <img class="clock-img-size" [src]="endPageConfig['clockIcon']">
+          <div class="score-details">
+          <h4>{{endPageConfig['score-details']['time-label']}}</h4>
+          <p>{{endPageConfig['score-details']['time-taken']}}</p>
+          </div>
+        </div>
+    </div>
+    <div class="credentials-container">
+        <div *ngIf="endPageConfig['showReplay']" class="endpage-img">
+            <img class="img-size" [src]="endPageConfig['replayIcon']" (click)="replay()">
+            <label class="fontMatrix">Replay</label>
+        </div>
+        <div *ngIf="endPageConfig['showUser']" class="endpage-img">
+            <img class="img-size" [src]="">
+            <label class="fontMatrix">Anonynous</label>
+        </div>
+        <div *ngIf="endPageConfig['showExit']" class="endpage-img">
+            <img class="img-size" [src]="endPageConfig['exitIcon']" (click)="exit()">
+            <label class="fontMatrix" >Exit</label>
+        </div>
+    </div>
+  
+  </div>
+  
